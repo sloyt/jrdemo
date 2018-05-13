@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>JR demo app</title>
+</head>
+<body>
+<h1>Hosts report</h1>
+<hr style="height: 1px; color: #c0c0c0;" />
+<div style="text-align: center;">
+    <a th:if="${page > 1}" th:href="${'/?page=' + (page - 1)}">&lt;</a>
+    <span style="margin: auto 10px;" th:text="${page}"></span>
+    <a th:href="${'/?page=' + (page + 1)}">&gt;</a>
+</div>
+<hr style="height: 1px; color: #c0c0c0;" />
+<div th:utext="${reportHtml}"></div>
+</body>
+</html>
