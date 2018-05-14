@@ -37,7 +37,7 @@ public class Report {
 
         if (sourceFile.exists()) {
             try {
-                return JasperCompileManager.compileReport(sourceFile.getFile().getAbsolutePath());
+                return JasperCompileManager.compileReport(sourceFile.getInputStream());
             } catch(Exception ex) {
                 logger.error("couldn't compile report \"" + reportName + "\": " + ex.getMessage());
             }
